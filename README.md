@@ -23,54 +23,47 @@ To build a platform that:
 ---
 
 ## 🏗 Features Implemented
-### 1. High-Throughput Data Ingestion & Processing
-- Data Sources:
-  - *Structured*: Yahoo Finance API, Alpha Vantage, World Bank/FRED datasets  
-  - *Unstructured*: Financial news headlines & sentiment analysis  
-- Features:
-  - Data cleaning, normalization & transformation  
-  - Fault-tolerant ingestion with retry mechanisms  
-  - Scalable pipeline for multiple issuers  
+### ✅ High-Throughput Data Ingestion
+- *Structured data* from Yahoo Finance & Alpha Vantage APIs  
+- *Unstructured data* from NewsAPI (financial news sentiment)  
+- Data cleaning, normalization & real-time updates  
 
-### 2. Adaptive Scoring Engine
-- Creditworthiness scoring using *interpretable ML models* (Decision Trees, Logistic Regression).  
-- Incremental learning for frequent updates.  
-- Black-box models (Random Forest/XGBoost) combined with *explainability layers (SHAP, LIME)*.  
+### ✅ Adaptive Scoring Engine
+- ML-based scoring using Decision Trees, Logistic Regression & XGBoost  
+- Frequent updates with incremental learning  
+- Explainability via SHAP & LIME  
 
-### 3. Explainability Layer
+### ✅ Explainability Layer
 - Feature contribution breakdowns  
-- Short-term & long-term trend indicators  
-- Event-based reasoning from unstructured sources  
-- Plain-language summaries for non-technical stakeholders  
+- Trend insights (short vs long term)  
+- Event-driven reasoning from unstructured data  
 
-### 4. Interactive Analyst Dashboard
+### ✅ Interactive Analyst Dashboard
 - Score trends visualization  
 - Feature importance charts  
-- Filtering & comparison with agency ratings  
+- Event-driven explanations  
 - Alerts for sudden score changes  
 
-### 5. End-to-End Deployment
-- Containerized using *Docker*  
-- Supports automated retraining and real-time updates  
-- Public demo URL (to be added when deployed)  
+### ✅ End-to-End Deployment
+- Dockerized for reproducibility  
+- Supports real-time retraining & updates  
 
 ---
 
 ## ⚙ Tech Stack
-- *Language*: Python 🐍  
-- *Libraries*: Pandas, NumPy, Scikit-learn, XGBoost, SHAP, LIME, Matplotlib, Seaborn  
-- *Data APIs*: Yahoo Finance, Alpha Vantage, World Bank APIs  
-- *Dashboard*: Streamlit / Dash  
-- *Deployment*: Docker, (Heroku/AWS/GCP - depending on hosting)  
+- *Python* (Pandas, Numpy, Scikit-learn, XGBoost, SHAP, LIME)  
+- *APIs*: Yahoo Finance, Alpha Vantage, NewsAPI  
+- *Dashboard*: Streamlit  
+- *Deployment*: Docker  
 
 ---
 
 ## 📊 System Architecture
 ```mermaid
 flowchart TD
-    A[Data Sources] -->|Structured + Unstructured| B[Data Ingestion Pipeline]
+    A[Data Sources] --> B[Ingestion Pipeline]
     B --> C[Preprocessing & Feature Engineering]
-    C --> D[Adaptive Scoring Engine]
+    C --> D[Credit Scoring Engine]
     D --> E[Explainability Layer]
     E --> F[Interactive Dashboard]
-    F --> G[End Users: Analysts, Regulators, Investors]
+    F --> G[End Users]
